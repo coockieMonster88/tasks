@@ -1,4 +1,4 @@
-package com.kodilla.tasks;
+package com.crud.tasks;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
