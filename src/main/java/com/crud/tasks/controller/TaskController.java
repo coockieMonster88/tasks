@@ -20,14 +20,10 @@ public class TaskController {
     private TaskMapper taskMapper;
 
     @RequestMapping(method = RequestMethod.GET, value = "getTasks")
-    public List<TaskDto> getTask(){
+    public List<TaskDto> getTasks(){
         return taskMapper.mapToTaskDtoList(service.getAllTask());
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "getTasks")
-    public List<TaskDto> getTasks() {
-        return new ArrayList<>();
-    }
 
     @RequestMapping(method = RequestMethod.GET, value = "getTask")
     public TaskDto getTask(Long taskId) {
