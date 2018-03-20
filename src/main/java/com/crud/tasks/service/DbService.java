@@ -5,8 +5,9 @@ import com.crud.tasks.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.ws.ServiceMode;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class DbService {
     @Autowired
@@ -16,6 +17,14 @@ public class DbService {
         return taskRepository.findAll();
     }
 
-    public List<Task> getTask() { return taskRepository.findById(); }
+    public Long getTaskById(final Long id) { return taskRepository.getTaskById(id).getId(); }
+
+    public Task saveTask(final Task task) {
+        return taskRepository.save(task);
+    }
+
+    public Optional<Task> getTask(final Long id) {
+        return taskRepository.findById(id);
+    }
 
 }
