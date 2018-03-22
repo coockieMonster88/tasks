@@ -27,4 +27,9 @@ public class DbService {
         return taskRepository.findById(id);
     }
 
+    public void deleteTask(final Long id) {
+        taskRepository.delete(id);
+
+    }
+
 }
